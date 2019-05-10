@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+{ set +x; } 2>/dev/null
+
+usage() {
+    echo "usage: $(basename $0) command [args ...]" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# == 0 ]] && usage
+
+out="$(osascript "${BASH_SOURCE[0]%/*}"/.finder-selection.applescript 2>&1)" || exit
+[[ -z "$out" ]] && {
+    out="$(osascript "${BASH_SOURCE[0]%/*}"/.finder-target.applescript)" || exit;
+}
+[[ -n "$out" ]] && while IFS= read path; do
+    [ -d "$path" ] && { cd "$path" || exit; "$@" || exit; }
+done <<< "$out";:

@@ -1,0 +1,22 @@
+{
+  "name": "mac-finder",
+  "version": "2019.5.10",
+  "description": "macOS Finder scripts",
+  "keywords": [
+    "Finder"
+  ],
+  "homepage": "https://github.com/looking-for-a-job/mac-finder",
+  "license": "Unlicense",
+  "bin": {
+    ".finder-comment.applescript": "./scripts/.finder-comment.applescript",
+    ".finder-icon.applescript": "./scripts/.finder-icon.applescript",
+    ".finder-reveal.applescript": "./scripts/.finder-reveal.applescript",
+    ".finder-selection.applescript": "./scripts/.finder-selection.applescript",
+    "finder": "./scripts/finder",
+    "finder-comment": "./scripts/finder-comment",
+    "finder-exec": "./scripts/finder-exec",
+    "finder-icon": "./scripts/finder-icon",
+    "finder-reveal": "./scripts/finder-reveal",
+    "finder-selection": "./scripts/finder-selection"
+  }
+}

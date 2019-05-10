@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+{ set +x; } 2>/dev/null
+
+usage() {
+    echo "usage: $(basename $0) path" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# != 1 ]] || [[ -z "$1" ]] && usage
+
+! [ -e "$1" ] && echo "ERROR: $1 NOT EXISTS" 1>&2 && exit 1
+
+[ -d "$1" ] && [[ $1 != */ ]] && set -- "$1"/
+
+osascript "${BASH_SOURCE[0]%/*}"/.finder-reveal.applescript "$1"

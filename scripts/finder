@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    cat <<EOF 1>&2
+usage: $(basename $0) command [args]
+
+Available commands:
+    comment                 get/set Finder comment
+    icon                    set Finder icon
+    reveal                  reveal path in Finder
+    seslection              get Finder selected items
+
+run \`$(basename $0) COMMAND --help\` for more infos
+EOF
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $OSTYPE != *"darwin"* ]] && echo "OS X only" && exit
+
+[[ $# == 0 ]] && usage "$@"
+
+"${BASH_SOURCE[0]%/*}"/"${BASH_SOURCE[0]##*/}"-"$1" "${@:2}"
