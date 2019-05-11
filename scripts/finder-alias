@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#
+# create Finder alias
+
+usage() {
+    echo "usage: $(basename $0) source target" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# != 2 ]] || [[ $1 == "--help" ]] && usage
+
+[[ $OSTYPE != *"darwin"* ]] && echo "macOS only" && exit
+
+! [ -e "$1" ] && echo "ERROR: '$1' NOT EXISTS" 1>&2 && exit 1
+[[ $2 == */* ]] && ! [ -e "${2%/*}" ] && echo "ERROR: '${2%/*}' NOT EXISTS" 1>&2 && exit 1
+
+! [ -d "$2" ] && [[ $2 != /* ]] && set -- "$1" "$PWD/$2"
+! [ -d "$2" ] && set -- "$1" "${2%/*}" "${2##*/}" || set -- "$@" "${1##*/}"
+
+dst="$2/$3"
+[ -e "$dst" ] && echo "SKIP: $dst EXISTS" && exit
+
+osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@" 1> /dev/null

@@ -21,11 +21,12 @@ $ [sudo] pip install mac-finder
 command|`usage`
 -|-
 `finder` |`usage: finder command [args]`
-`finder-comment` |`usage: finder-comment path [comment]`
-`finder-exec` |`usage: finder-exec command [args ...]`
-`finder-icon` |`usage: finder-icon path image`
-`finder-reveal` |`usage: finder-reveal path`
-`finder-selection` |`usage: finder-selection`
+[`scripts/finder-alias`](# "create Finder alias") |`usage: finder-alias source target`
+[`scripts/finder-comment`](# "read/write Finder comment") |`usage: finder-comment path [comment]`
+[`scripts/finder-exec`](# "execute command from every selected Finder directory") |`usage: finder-exec command [args ...]`
+[`scripts/finder-icon`](# "set Finder item icon") |`usage: finder-icon path image`
+[`scripts/finder-reveal`](# "reveal the path in the Finder. 'open -R' replacement") |`usage: finder-reveal path`
+[`scripts/finder-selection`](# "Finder selection") |`usage: finder-selection`
 
 <p align="center">
     <a href="https://pypi.org/project/python-readme-generator/">python-readme-generator</a>

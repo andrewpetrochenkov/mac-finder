@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# -*- coding: utf-8 -*-
-{ set +x; } 2>/dev/null
+#
+# read/write Finder comment
 
 usage() {
     echo "usage: $(basename $0) path [comment]" 1>&2

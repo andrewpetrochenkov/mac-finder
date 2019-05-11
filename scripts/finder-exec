@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# -*- coding: utf-8 -*-
-{ set +x; } 2>/dev/null
+#
+# execute command from every selected Finder directory
 
 usage() {
     echo "usage: $(basename $0) command [args ...]" 1>&2
