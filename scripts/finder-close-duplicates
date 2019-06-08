@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# read/write Finder comment
+# close duplicates
 
 usage() {
-    echo "usage: $(basename $0) path [comment]" 1>&2
+    echo "usage: $(basename $0)" 1>&2
     [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
 }
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-[[ $# == 0 ]] && usage
+[[ $# != 0 ]] && usage
 
 osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"

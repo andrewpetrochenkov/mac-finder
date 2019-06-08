@@ -1,6 +1,6 @@
 {
   "name": "mac-finder",
-  "version": "2019.5.11",
+  "version": "2019.5.16",
   "description": "macOS Finder scripts",
   "keywords": [
     "Finder"
@@ -9,12 +9,16 @@
   "license": "Unlicense",
   "bin": {
     ".finder-alias.applescript": "./scripts/.finder-alias.applescript",
+    ".finder-close-bg.applescript": "./scripts/.finder-close-bg.applescript",
+    ".finder-close-duplicates.applescript": "./scripts/.finder-close-duplicates.applescript",
     ".finder-comment.applescript": "./scripts/.finder-comment.applescript",
     ".finder-icon.applescript": "./scripts/.finder-icon.applescript",
     ".finder-reveal.applescript": "./scripts/.finder-reveal.applescript",
     ".finder-selection.applescript": "./scripts/.finder-selection.applescript",
     "finder": "./scripts/finder",
     "finder-alias": "./scripts/finder-alias",
+    "finder-close-bg": "./scripts/finder-close-bg",
+    "finder-close-duplicates": "./scripts/finder-close-duplicates",
     "finder-comment": "./scripts/finder-comment",
     "finder-exec": "./scripts/finder-exec",
     "finder-icon": "./scripts/finder-icon",

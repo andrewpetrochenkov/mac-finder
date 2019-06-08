@@ -15,4 +15,4 @@ usage() {
 
 [ -d "$1" ] && [[ $1 != */ ]] && set -- "$1"/
 
-osascript "${BASH_SOURCE[0]%/*}"/.finder-reveal.applescript "$1"
+osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"

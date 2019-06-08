@@ -6,10 +6,12 @@ usage() {
 usage: $(basename $0) command [args]
 
 Available commands:
+    close-bg                close background windows
+    close-duplicates        close duplicates
     comment                 get/set Finder comment
     icon                    set Finder icon
     reveal                  reveal path in Finder
-    seslection              get Finder selected items
+    selection               get Finder selected items
 
 run \`$(basename $0) COMMAND --help\` for more infos
 EOF

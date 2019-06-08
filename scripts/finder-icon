@@ -15,5 +15,5 @@ usage() {
 [[ -z "$2" ]] && echo "ERROR: image unknown" 1>&2 && exit 1
 ! [ -e "$2" ] && echo "ERROR: $2 NOT EXISTS" 1>&2 && exit 1
 
-osascript "${BASH_SOURCE[0]%/*}"/.finder-icon.applescript "$@" || exit
+osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@" || exit
 [ -e "$1"/$'Icon\r' ] && { chflags hidden "$1"/$'Icon\r'; exit; };:
