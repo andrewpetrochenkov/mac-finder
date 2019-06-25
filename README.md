@@ -26,6 +26,7 @@ command|`usage`
 [`finder-close-duplicates`](# "close duplicates") |`usage: finder-close-duplicates`
 [`finder-comment`](# "read/write Finder comment") |`usage: finder-comment path [comment]`
 [`finder-exec`](# "execute command from every selected Finder directory") |`usage: finder-exec command [args ...]`
+[`finder-frontmost`](# "print 1 if 'Finder.app' is frontmost, else 0") |`usage: finder-frontmost`
 [`finder-icon`](# "set Finder item icon") |`usage: finder-icon path image`
 [`finder-reveal`](# "reveal the path in the Finder. 'open -R' replacement") |`usage: finder-reveal path`
 [`finder-selection`](# "Finder selection") |`usage: finder-selection`
@@ -48,7 +49,6 @@ set Finder icon
 $ finder-icon path image.png
 ```
 
-
 ```bash
 $ finder-reveal ~/git
 ```
@@ -63,6 +63,12 @@ $ finder-selection
 execute command from every selected Finder directory
 ```bash
 $ finder-exec python setup.py install
+```
+
+frontmost (`1` or `0`)
+```bash
+$ finder-frontmost
+0
 ```
 
 <p align="center">

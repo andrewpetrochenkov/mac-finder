@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# print 1 if 'Finder.app' is frontmost, else 0
+
+
+usage() {
+    echo "usage: $(basename $0)" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# != 0 ]] && usage "$@"
+
+set "com.apple.finder"
+front="$(/usr/bin/lsappinfo front)" || exit
+/usr/bin/lsappinfo info -only bundleID "$front" | grep -iq "$1" && echo 1 || echo 0

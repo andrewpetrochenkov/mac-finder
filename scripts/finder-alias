@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#
 # create Finder alias
 
 usage() {

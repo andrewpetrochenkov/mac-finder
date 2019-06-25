@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#
 # Finder selection
 
 usage() {

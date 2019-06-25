@@ -9,6 +9,7 @@ Available commands:
     close-bg                close background windows
     close-duplicates        close duplicates
     comment                 get/set Finder comment
+    frontmost               print 1 if 'Finder.app' is frontmost, else 0
     icon                    set Finder icon
     reveal                  reveal path in Finder
     selection               get Finder selected items
