@@ -3,10 +3,10 @@
 
 usage() {
     echo "usage: $(basename $0) source target" 1>&2
-    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+    [ "$1" = "-h" ] || [ "$1" = "--help" ]; exit
 }
 
-[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+[ "$1" = "-h" ] || [ "$1" = "--help" ] && usage "$@"
 
 [[ $# != 2 ]] || [[ $1 == "--help" ]] && usage
 
